@@ -14,7 +14,6 @@ const Routes = () => {
     const [lucknowWeather, setLucknowWeather] = useState(null);
     const arrivalLocation = arrival;
     const departureLocation = departure;
-
     useEffect(() => {
         const fetchWeather = async (coords) => {
             const apiUrl = `https://api.weatherapi.com/v1/current.json?key=9e75102f2a1049a78a382719242005&q=${coords.lat},${coords.lon}`;
@@ -61,29 +60,6 @@ const Routes = () => {
 
         fetchAllWeather();
     }, [departureCoords, arrivalCoords, arrival]);
-    const data = async () => {
-        const requestData = {
-            condition: 'Clear'
-        };
-    
-        let response = await fetch('http://127.0.0.1:5000/classify', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(requestData)
-        });
-    
-        if (response.ok) {
-            let result = await response.json();
-            console.log(result);
-        } else {
-            console.error('Error:', response.statusText);
-        }
-    };
-    
-    data();
-    
     
     const handleRoute = () => {
         navigate('/');
