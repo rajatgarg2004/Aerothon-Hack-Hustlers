@@ -67,8 +67,8 @@ const Routes = () => {
     };
 
     return (
-        <div className="flex flex-row justify-between min-h-screen p-4 bg-gradient-to-br from-[#061c07] from-0% via-black via-50% to-[#061c07] to-95%">
-            <div className='flex flex-col w-1/2'>
+        <div className="flex flex-col lg:flex-row xl:flex-row 2xl:flex-row justify-between min-h-screen p-4">
+            <div className='flex flex-col 2xl:w-[48%] xl:w-[48%] lg:w-[48%] w-[100%]'>
                 <div className="bg-white p-5 rounded-lg shadow-md mb-4">
                     <h2 className="text-xl font-bold">Description</h2>
                 </div>
@@ -136,7 +136,7 @@ const Routes = () => {
                     </div>
                 </div>
             </div>
-            <div className='w-[45%]'>
+            <div className='flex flex-col 2xl:w-[48%] xl:w-[48%] lg:w-[48%] w-[100%]'>
                 <div className="bg-white p-3 rounded-lg shadow-md mb-5 h-auto">
                     <h2 className="text-xl font-bold mb-4">MAP</h2>
                     <div >
@@ -147,11 +147,11 @@ const Routes = () => {
                     </div>
                 </div>
 
-                <div className="bg-white p-5 rounded-lg shadow-md h-auto">
-                    <h2 className="text-xl font-bold mb-4">Challenges</h2>
+                <div className="bg-white p-5 rounded-lg shadow-md  mb-4 h-auto">
+                    <h2 className="text-xl font-bold">Challenges</h2>
                 </div>
 
-                <div className='w-full flex justify-center items-center mt-auto'>
+                <div className='w-full flex justify-center items-center'>
                     <button className='ml-2 mt-1 bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-lg mb-1' onClick={handleRoute}>Dashboard</button>
                 </div>
             </div>
