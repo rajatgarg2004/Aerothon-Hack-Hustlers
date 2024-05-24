@@ -67,28 +67,14 @@ const Routes = () => {
     };
 
     return (
-        <div className="flex flex-wrap min-h-screen p-4">
-            <div className="w-full md:w-1/2 p-4">
-                <div className="bg-white p-5 rounded-lg shadow-md h-full">
-                    <h2 className="text-xl font-bold mb-4">Description</h2>
+        <div className="flex flex-row justify-between min-h-screen p-4 bg-gradient-to-br from-[#061c07] from-0% via-black via-50% to-[#061c07] to-95%">
+            <div className='flex flex-col w-1/2'>
+                <div className="bg-white p-5 rounded-lg shadow-md mb-4">
+                    <h2 className="text-xl font-bold">Description</h2>
                 </div>
-            </div>
 
-            <div className="w-full md:w-1/2">
-                <div className="bg-white p-3 rounded-lg shadow-md h-full">
-                    <h2 className="text-xl font-bold mb-4">MAP</h2>
-                    <div style={{ height: '400px' }}>
-                        <Map
-                            departureCoords={departureCoords}
-                            arrivalCoords={arrivalCoords}
-                        />
-                    </div>
-                </div>
-            </div>
-
-            <div className="w-full md:w-1/2 p-4">
-                <div className="bg-white p-5 rounded-lg h-full flex flex-col">
-                    <div className="flex flex-row mb-4">
+                <div className="bg-white p-5 rounded-lg mb-4 flex flex-col text-center">
+                    <div className="flex flex-row">
                         {departureWeather && (
                             <div className="w-1/2 p-2">
                                 <WeatherDetails
@@ -150,15 +136,24 @@ const Routes = () => {
                     </div>
                 </div>
             </div>
+            <div className='w-[45%]'>
+                <div className="bg-white p-3 rounded-lg shadow-md mb-5 h-auto">
+                    <h2 className="text-xl font-bold mb-4">MAP</h2>
+                    <div >
+                        <Map
+                            departureCoords={departureCoords}
+                            arrivalCoords={arrivalCoords}
+                        />
+                    </div>
+                </div>
 
-            <div className="w-full md:w-1/2 p-4">
-                <div className="bg-white p-5 rounded-lg shadow-md h-full">
+                <div className="bg-white p-5 rounded-lg shadow-md h-auto">
                     <h2 className="text-xl font-bold mb-4">Challenges</h2>
                 </div>
-            </div>
 
-            <div className='w-full flex justify-center items-center mt-auto'>
-                <button className='ml-2 mt-1 bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-lg mb-1' onClick={handleRoute}>Dashboard</button>
+                <div className='w-full flex justify-center items-center mt-auto'>
+                    <button className='ml-2 mt-1 bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-lg mb-1' onClick={handleRoute}>Dashboard</button>
+                </div>
             </div>
         </div>
     );

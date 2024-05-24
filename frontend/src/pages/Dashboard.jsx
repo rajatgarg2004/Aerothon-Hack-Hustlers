@@ -68,7 +68,7 @@ const Dashboard = () => {
   };
 
   return (
-    <div className='bg-cover bg-center min-h-screen'>
+    <div className='bg-cover bg-center min-h-screen bg-gradient-to-br from-[#061c07] from-0% via-black via-50% to-[#061c07] to-95%'>
       <NavBar />
       <div className='flex justify-center items-center mt-8'>
         <div className='relative flex flex-col items-center w-10/12 md:w-7/12'>
