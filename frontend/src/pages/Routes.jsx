@@ -61,7 +61,30 @@ const Routes = () => {
 
         fetchAllWeather();
     }, [departureCoords, arrivalCoords, arrival]);
-
+    const data = async () => {
+        const requestData = {
+            condition: 'Clear'
+        };
+    
+        let response = await fetch('http://127.0.0.1:5000/classify', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(requestData)
+        });
+    
+        if (response.ok) {
+            let result = await response.json();
+            console.log(result);
+        } else {
+            console.error('Error:', response.statusText);
+        }
+    };
+    
+    data();
+    
+    
     const handleRoute = () => {
         navigate('/');
     };
