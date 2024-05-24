@@ -33,7 +33,7 @@ const Map = ({ departureCoords, arrivalCoords }) => {
 
   return (
     <div style={{ width: '100%', height: '100%' }}>
-      <Viewer ref={viewerRef} sceneMode="2D" creditContainer={document.createElement('div')}>
+      <Viewer ref={viewerRef} sceneMode="2D">
         <Entity
           name="Departure"
           position={Cartesian3.fromDegrees(departureCoords.lon, departureCoords.lat)}

@@ -6,14 +6,14 @@ import './App.css';
 import NavBar from './components/Navbar';
 function App() {
   return (
-    <div className=' bg-gradient-to-br from-[#061c07] from-0% via-black via-50% to-[#061c07] to-95%'>
-      <NavBar/>
-      <Router>
+    <div className='bg-gradient-to-br from-[#061c07] from-0% via-black via-50% to-[#061c07] to-95%'>
+    <NavBar/>
+      <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Dashboard />} />
+          <Route exact path="/" element={<Dashboard />} />
           <Route path="/routes" element={<RoutesPage />} />
         </Routes>
-      </Router>
+      </BrowserRouter>
     </div>
   );
 }
