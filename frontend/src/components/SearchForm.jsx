@@ -9,7 +9,7 @@ const SearchForm = ({
   handleSearch
 }) => {
   return (
-    <div className='flex flex-row items-center justify-center relative mb-6'>
+    <div className='flex flex-row items-center mb-6 justify-center relative'>
       <div className="relative w-full max-w-md">
         <span className="absolute inset-y-0 left-0 pl-3 flex items-center">
           <img src={searchicon} alt="Search Icon" className="h-6 w-6" />

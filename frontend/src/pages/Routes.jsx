@@ -46,7 +46,7 @@ const Routes = () => {
                     setPuneWeather(puneWeatherData);
                 }
 
-                if (arrival === 'New Delhi') {
+                if (['New Delhi', 'Kolkata'].includes(arrival)) {
                     const [ranchiWeatherData, lucknowWeatherData] = await Promise.all([
                         fetchWeatherByCity('Ranchi'),
                         fetchWeatherByCity('Lucknow'),

@@ -9,7 +9,7 @@ const Map = ({ departureCoords, arrivalCoords }) => {
     if (viewerRef.current && viewerRef.current.cesiumElement) {
       const viewer = viewerRef.current.cesiumElement;
       viewer.camera.flyTo({
-        destination: Cartesian3.fromDegrees(arrivalCoords.lon, arrivalCoords.lat, 2000000),
+        destination: Cartesian3.fromDegrees(arrivalCoords.lon, arrivalCoords.lat, 3000000),
         orientation: {
           heading: 0.0,
           pitch: -CesiumMath.PI_OVER_TWO,
@@ -25,7 +25,9 @@ const Map = ({ departureCoords, arrivalCoords }) => {
   const thirdAdditionalLocation = { lon: 73.87, lat: 18.53 };
 
   // Conditions
-  const showFirstAndSecondLocation = arrivalCoords.lat === 28.6 && arrivalCoords.lon === 77.2;
+  const showFirstAndSecondLocation = 
+    (arrivalCoords.lat === 28.6 && arrivalCoords.lon === 77.2) || 
+    (arrivalCoords.lat === 22.57 && arrivalCoords.lon === 88.37);
   const showThirdLocation = 
     (arrivalCoords.lat === 18.98 && arrivalCoords.lon === 72.83) ||
     (arrivalCoords.lat === 12.98 && arrivalCoords.lon === 77.58) ||

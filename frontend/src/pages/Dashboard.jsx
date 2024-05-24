@@ -67,7 +67,7 @@ const Dashboard = () => {
   };
 
   return (
-    <div className='bg-cover bg-center min-h-screen bg-gradient-to-br from-[#061c07] from-0% via-black via-50% to-[#061c07] to-95%'>
+    <div className='bg-cover bg-gradient-to-br p-6 from-[#061c07] from-0% via-black via-50% to-[#061c07] to-95%'>
       <div className='flex justify-center items-center mt-8'>
         <div className='relative flex flex-col items-center w-10/12 md:w-7/12'>
           <div className='w-full shadow-2xl p-5 rounded-lg border-t-4 mb-5 bg-white'>
@@ -91,7 +91,7 @@ const Dashboard = () => {
         </div>
       </div>
       {showLocations && (
-        <div className='flex justify-center items-center mt-8'>
+        <div className='flex justify-center items-center'>
           <div className='relative flex flex-row items-center w-10/12 md:w-7/12'>
             <WeatherDetails location={departureLocation} weather={departureWeather} latitude={departureCoords ? departureCoords.lat : null} longitude={departureCoords ? departureCoords.lon : null} />
             <WeatherDetails location={arrivalLocation} weather={arrivalWeather} latitude={arrivalCoords ? arrivalCoords.lat : null} longitude={arrivalCoords ? arrivalCoords.lon : null} />
