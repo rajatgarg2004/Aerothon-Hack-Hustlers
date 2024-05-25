@@ -148,7 +148,7 @@ Welcome to AeroRoute Master! This guide will help you navigate through the funct
 
 ### Conclusion
 
-Thank you for choosing AeroRoute Master. We are committed to providing you with the best tools for safe and efficient flight navigation. For more information, updates, and support, visit our official website or contact our support team.
+Thank you for choosing AeroRoute Master. We are committed to providing you with the best tools for safe and efficient flight navigation.
 
 ---
 
