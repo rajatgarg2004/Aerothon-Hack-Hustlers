@@ -11,7 +11,17 @@ In the aviation industry, ensuring safe and efficient flight navigation is param
 The primary objective of AeroRoute Master is to design, develop, and implement a robust software solution that leverages existing algorithms to identify optimal flight paths considering the aforementioned challenges. Additionally, the solution will provide real-time risk assessment and suggest alternative routes to pilots, airlines, and airport authorities for safe and efficient navigation. An added integration of a real-time health metrics tracker based on flight sensor data will also be useful to understand flight health.
 
 ### Key Components and Requirements
+## Technologies Used
 
+- *Programming Language*: Python
+- *Algorithm*: Dijkstra Algorithm
+- *APIs*: [WeatherAPI](https://www.weatherapi.com/)
+- *Frameworks*: Flask (for web interface)
+- *Data Visualization*: Plotly, Dash
+- *Backend*: Nodejs
+- *Libraries*: Cesium(JavaScript)
+
+  
 #### Data Collection and Management
 
 - Collect data continuously from open sources or create sample datasets encompassing various factors affecting flight navigation, including weather conditions, environmental variables, electronic system failures, and more.
