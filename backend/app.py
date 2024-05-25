@@ -18,7 +18,7 @@ with open('gmm_model.pkl', 'rb') as file:
 weather_to_float = {
     'Smoke': -0.026775820527341013, 'Clear': -0.051904099218437326, 'Haze': 0.015248380370697288, 
     'Unknown': -0.030526148904270137, 'Scattered Clouds': 0.0009865273799026925, 'Shallow Fog': 0.0009865273799026925, 
-    'Mostly Cloudy': 0.0009865273799026925, 'Fog': 0.02605020412632472, 'Partly Cloudy': 0.0009865273799026925, 
+    'Mostly Cloudy': 0.0009865273799026925, 'Fog': 0.02605020412632472, 'Partly cloudy': 0.0009865273799026925, 
     'Patches of Fog': 0.0009865273799026925, 'Thunderstorms and Rain': 0.0009865273799026925, 'Overcast': -0.05279675142216545, 
     'Rain': -0.011830033387927227, 'Light Rain': 0.0009865273799026925, 'Light Drizzle': 0.0009865273799026925, 
     'Drizzle': 0.008022861679456572, 'Mist': 0.026851750772547596, 'Volcanic Ash': 0.0009865273799026925, 
@@ -29,7 +29,7 @@ weather_to_float = {
     'Light Rain Showers': 0.0009865273799026925, 'Thunderstorms with Hail': 0.0009865273799026925, 'Partial Fog': 0.0009865273799026925, 
     'Light Fog': 0.0009865273799026925, 'Heavy Fog': 0.0009865273799026925, 'Blowing Sand': 0.0009865273799026925, 
     'Light Hail Showers': 0.0009865273799026925, 'Light Sandstorm': 0.0009865273799026925, 'Light Freezing Rain': 0.0009865273799026925, 
-    'Rain Showers': 0.0009865273799026925, 'Sunny' : 0.0008
+    'Rain Showers': 0.0009865273799026925, 'Sunny' : -0.051904099218437326,
 }
 
 condition_labels = ['optimal', 'bad']
