@@ -36,7 +36,8 @@ const Routes = () => {
         };
 
         const dataFetch = async (city) => {
-            const apiUrl = 'http://localhost:3000/api/classify'; 
+            const backendUrl = process.env.REACT_APP_backend_url;
+            const apiUrl = `${backendUrl}/api/classify`; 
             const data1 = { city: city };
             try {
                 const response = await fetch(apiUrl, {

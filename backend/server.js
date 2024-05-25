@@ -6,12 +6,7 @@ const PORT = 3000;
 
 app.use(express.json()); // Middleware to parse JSON bodies
 
-const corsOptions = {
-  origin: 'http://localhost:5173', // Allow requests from this origin
-  optionsSuccessStatus: 200 // Some legacy browsers choke on 204
-};
-
-app.use(cors(corsOptions));
+app.use(cors());
 
 // Endpoint to fetch weather data
 app.get('/api/weather', async (req, res) => {

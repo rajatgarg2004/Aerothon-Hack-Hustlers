@@ -42,7 +42,8 @@ const Dashboard = () => {
   };
 
   const fetchWeather = async (city) => {
-    const apiUrl = `http://localhost:3000/api/weather?city=${city}`;
+    const backendUrl = process.env.REACT_APP_backend_url;
+    const apiUrl = `${backendUrl}/api/weather?city=${city}`;
     const response = await fetch(apiUrl);
     if (!response.ok) throw new Error('Could not get weather data');
     const data = await response.json();
@@ -50,7 +51,8 @@ const Dashboard = () => {
   };
 
   const fetchCoordinates = async (city) => {
-    const apiUrl = `http://localhost:3000/api/weather?city=${city}`;
+    const backendUrl = process.env.REACT_APP_backend_url;
+    const apiUrl = `${backendUrl}/api/weather?city=${city}`;
     const response = await fetch(apiUrl);
     if (!response.ok) throw new Error('Could not get coordinates');
     const data = await response.json();

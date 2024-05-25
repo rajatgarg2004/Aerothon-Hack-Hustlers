@@ -13,6 +13,7 @@
   "dependencies": {
     "axios": "^1.6.8",
     "cesium": "^1.117.0",
+    "dotenv": "^16.4.5",
     "leaflet": "^1.9.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -23,7 +24,7 @@
   "devDependencies": {
     "@types/react": "^18.2.66",
     "@types/react-dom": "^18.2.22",
-    "@vitejs/plugin-react": "^4.2.1",
+    "@vitejs/plugin-react": "^4.3.0",
     "autoprefixer": "^10.4.19",
     "copy-webpack-plugin": "^12.0.2",
     "eslint": "^8.57.0",
