@@ -172,6 +172,7 @@ const Map = ({ departureCoords, arrivalCoords }) => {
                 verticalOrigin: VerticalOrigin.BOTTOM,
                 pixelOffset: new Cartesian2(0, -9),
               }}
+              
             />
             <Entity
               name="Line between Arrival and Third Additional Location"
