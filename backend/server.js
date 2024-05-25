@@ -3,11 +3,11 @@ const cors = require('cors');
 const axios = require('axios');
 const app = express();
 const PORT = 3000;
-
+require('dotenv').config()
 app.use(express.json()); // Middleware to parse JSON bodies
 
 const corsOptions = {
-  origin: 'http://localhost:5173', // Allow requests from this origin
+  origin: '*', // Allow requests from this origin
   optionsSuccessStatus: 200 // Some legacy browsers choke on 204
 };
 
@@ -16,8 +16,9 @@ app.use(cors(corsOptions));
 // Endpoint to fetch weather data
 app.get('/api/weather', async (req, res) => {
   const { city } = req.query;
+  console.log(city);
   const apiUrl = `https://api.weatherapi.com/v1/current.json?key=9e75102f2a1049a78a382719242005&q=${city}&aqi=no`;
-
+  console.log(apiUrl)
   try {
     const response = await axios.get(apiUrl);
     res.json(response.data);
@@ -30,7 +31,7 @@ app.get('/api/weather', async (req, res) => {
 app.post('/api/classify', async (req, res) => {
   const { city } = req.body;
   console.log(city);
-  const flaskApiUrl = 'http://localhost:5000/classify';
+  const flaskApiUrl = `${process.env.Backend_Url_Flask}/classify`;
 
   try {
     // Make the POST request to the Flask classify endpoint
