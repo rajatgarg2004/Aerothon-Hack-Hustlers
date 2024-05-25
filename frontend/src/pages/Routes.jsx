@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Map from '../containers/Map';
 import { useLocation, useNavigate } from 'react-router-dom';
 import WeatherDetails from '../components/WeatherDetails';
-
+import env from "react-dotenv";
 const Routes = () => {
     const location = useLocation();
     const navigate = useNavigate();
@@ -36,7 +36,7 @@ const Routes = () => {
         };
 
         const dataFetch = async (city) => {
-            const backendUrl = window.env.REACT_APP_backend_url;
+            const backendUrl = env.REACT_APP_backend_url;
             const apiUrl = `${backendUrl}/api/classify`; 
             const data1 = { city: city };
             try {

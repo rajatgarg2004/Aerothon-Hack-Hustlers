@@ -4,7 +4,7 @@ import SearchForm from '../components/SearchForm';
 import FlightDetails from '../components/FlightDetails';
 import WeatherDetails from '../components/WeatherDetails';
 import MainRoutes from '../components/MainRoutes';
-
+import env from "react-dotenv";
 
 const Dashboard = () => {
   const [inputDepartureLocation, setInputDepartureLocation] = useState('');
@@ -42,7 +42,7 @@ const Dashboard = () => {
   };
 
   const fetchWeather = async (city) => {
-    const backendUrl = window.env.REACT_APP_backend_url;
+    const backendUrl = env.REACT_APP_backend_url;
     const apiUrl = `${backendUrl}/api/weather?city=${city}`;
     const response = await fetch(apiUrl);
     if (!response.ok) throw new Error('Could not get weather data');
@@ -51,7 +51,7 @@ const Dashboard = () => {
   };
 
   const fetchCoordinates = async (city) => {
-    const backendUrl = window.env.REACT_APP_backend_url;
+    const backendUrl = env.REACT_APP_backend_url;
     const apiUrl = `${backendUrl}/api/weather?city=${city}`;
     console.log(apiUrl);
     const response = await fetch(apiUrl);
