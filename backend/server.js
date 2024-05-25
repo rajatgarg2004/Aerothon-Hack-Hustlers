@@ -32,18 +32,16 @@ app.post('/api/classify', async (req, res) => {
   const flaskApiUrl = 'http://localhost:5000/classify';
 
   try {
-    // First, fetch the weather data
-    const weatherResponse = await axios.get(`http://localhost:3000/api/weather?city=${city}`);
-    const weatherData = weatherResponse.data;
-
-    // Get the weather condition
-    const condition = weatherData.current.condition.text;
-
     // Make the POST request to the Flask classify endpoint
-    const classifyResponse = await axios.post(flaskApiUrl, { city: city });
-
+    const classifyResponse = await fetch(flaskApiUrl, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(city)
+    });
+    const classifyData = await classifyResponse.json();
     // Return the classification result
-    res.json(classifyResponse.data);
+    res.send(classifyData);
+
   } catch (error) {
     console.error('Error classifying weather condition:', error);
     res.status(500).json({ message: 'Error classifying weather condition' });

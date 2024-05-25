@@ -29,7 +29,7 @@ weather_to_float = {
     'Light Rain Showers': 0.0009865273799026925, 'Thunderstorms with Hail': 0.0009865273799026925, 'Partial Fog': 0.0009865273799026925, 
     'Light Fog': 0.0009865273799026925, 'Heavy Fog': 0.0009865273799026925, 'Blowing Sand': 0.0009865273799026925, 
     'Light Hail Showers': 0.0009865273799026925, 'Light Sandstorm': 0.0009865273799026925, 'Light Freezing Rain': 0.0009865273799026925, 
-    'Rain Showers': 0.0009865273799026925
+    'Rain Showers': 0.0009865273799026925, 'Sunny' : 0.0008
 }
 
 condition_labels = ['optimal', 'bad']
@@ -50,15 +50,17 @@ def get_weather(city):
 @app.route('/classify', methods=['POST'])
 def classify_weather():
     data = request.json
-    city = data.get('city')
+    city = data
+    print(f"Received city: {city}")
 
     weather_data = get_weather(city)
     if not weather_data:
         return jsonify({'error': 'Error fetching weather data'}), 500
-
     condition = weather_data['current']['condition']['text']
-    print(f"Weather condition for city {city}: {condition}")
+    print(condition)
+    # print(f"Weather condition for city {city}: {condition}")
 
+    print(weather_to_float)
     if condition not in weather_to_float:
         return jsonify({'error': 'Condition not found'}), 404
 

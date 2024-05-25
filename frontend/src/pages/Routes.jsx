@@ -14,6 +14,7 @@ const Routes = () => {
     const [lucknowWeather, setLucknowWeather] = useState(null);
     const arrivalLocation = arrival;
     const departureLocation = departure;
+    const [betweenData,setBetweenData] = useState(null);
     useEffect(() => {
         const fetchWeather = async (coords) => {
             const apiUrl = `https://api.weatherapi.com/v1/current.json?key=9e75102f2a1049a78a382719242005&q=${coords.lat},${coords.lon}`;
@@ -31,6 +32,24 @@ const Routes = () => {
             return data;
         };
 
+        const dataFetch = async (city) => {
+            const apiUrl = 'http://localhost:3000/api/classify'; 
+            try {
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(city),
+                });
+                if (!response.ok) throw new Error('Could not get weather data');
+                const data = await response.json();
+                return data;
+            } catch (error) {
+                console.error('Error fetching data:', error);
+                throw error;
+            }
+        };
         const fetchAllWeather = async () => {
             try {
                 const [depWeather, arrWeather] = await Promise.all([
@@ -43,6 +62,11 @@ const Routes = () => {
                 if (['Bangalore', 'Mumbai', 'Hyderabad'].includes(arrival)) {
                     const puneWeatherData = await fetchWeatherByCity('Pune');
                     setPuneWeather(puneWeatherData);
+                    const condition = await dataFetch('Pune');
+                    let data = [];
+                    data.push(condition);
+                    setBetweenData(data);
+                    console.log(betweenData);
                 }
 
                 if (['New Delhi', 'Kolkata'].includes(arrival)) {
@@ -52,6 +76,13 @@ const Routes = () => {
                     ]);
                     setRanchiWeather(ranchiWeatherData);
                     setLucknowWeather(lucknowWeatherData);
+                    let data = [];
+                    let dataRanchi = await dataFetch('Ranchi');
+                    data.push(dataRanchi);
+                    let dataLucknow = await dataFetch('Lucknow');
+                    data.push(dataLucknow);
+                    setBetweenData(data);
+                    console.log(betweenData);
                 }
             } catch (error) {
                 console.error("Failed to fetch weather data:", error);
