@@ -37,8 +37,9 @@ weather_to_float = {
 condition_labels = ['optimal', 'bad']
 
 def get_weather(city):
-    backendurl = os.getenv('Backend_Url')
-    api_url = f"{backendurl}/api/weather?city={city}"
+    backendurl = os.getenv('Backend_Url_Node')
+    print(backendurl)
+    api_url = f"http://localhost:3000/api/weather?city={city}"
 
     try:
         response = requests.get(api_url)

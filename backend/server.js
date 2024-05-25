@@ -32,7 +32,7 @@ app.post('/api/classify', async (req, res) => {
   const { city } = req.body;
   console.log(city);
   const flaskApiUrl = `${process.env.Backend_Url_Flask}/classify`;
-
+  console.log(flaskApiUrl);
   try {
     // Make the POST request to the Flask classify endpoint
     const classifyResponse = await fetch(flaskApiUrl, {
