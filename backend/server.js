@@ -29,6 +29,7 @@ app.get('/api/weather', async (req, res) => {
 // Endpoint to classify weather condition
 app.post('/api/classify', async (req, res) => {
   const { city } = req.body;
+  console.log(city);
   const flaskApiUrl = 'http://localhost:5000/classify';
 
   try {
