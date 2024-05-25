@@ -3,11 +3,9 @@ from flask_cors import CORS
 import pickle
 import numpy as np
 import requests
-from dotenv import load_dotenv
-import os
-load_dotenv()
+
 app = Flask(__name__)
-CORS(app, resources={r"/classify": {"origins": "*"}})
+CORS(app, resources={r"/classify": {"origins": "http://localhost:5173"}})
 
 # Load the models
 with open('scaler.pkl', 'rb') as file:
@@ -37,8 +35,7 @@ weather_to_float = {
 condition_labels = ['optimal', 'bad']
 
 def get_weather(city):
-    backendurl = os.getenv('Backend_Url')
-    api_url = f"{backendurl}/api/weather?city={city}"
+    api_url = f"http://localhost:3000/api/weather?city={city}"
 
     try:
         response = requests.get(api_url)
