@@ -32,12 +32,7 @@ The primary objective of AeroRoute Master is to design, develop, and implement a
    - External APIs (for collecting real-time weather and flight data)
    - [WeatherAPI](https://www.weatherapi.com/)
 
-5. **DevOps**:
-   - Docker (for containerization)
-   - Kubernetes (for orchestration)
-   - Jenkins (for continuous integration and deployment)
-
-6. **Cloud Services**:
+5. **Cloud Services**:
    - Vercel (for app deployment)
 
   
