@@ -36,7 +36,7 @@ const Routes = () => {
         };
 
         const dataFetch = async (city) => {
-            const backendUrl = import.meta.env.REACT_APP_backend_url;
+            const backendUrl = window.env.REACT_APP_backend_url;
             const apiUrl = `${backendUrl}/api/classify`; 
             const data1 = { city: city };
             try {

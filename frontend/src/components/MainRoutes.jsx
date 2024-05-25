@@ -10,7 +10,7 @@ const MainRoutes = () => {
     console.log(departure);
     console.log(arrival);
     const fetchWeather = async (city) => {
-        const backendUrl = import.meta.env.REACT_APP_backend_url; 
+        const backendUrl = window.env.REACT_APP_backend_url;
         const apiUrl = `${backendUrl}/api/weather?city=${city}`;
         const response = await fetch(apiUrl);
         if (!response.ok) throw new Error('Could not get weather data');
@@ -18,7 +18,7 @@ const MainRoutes = () => {
         return data;
       };
     const fetchCoordinates = async (city) => {
-        const backendUrl = import.meta.env.REACT_APP_backend_url; 
+        const backendUrl = window.env.REACT_APP_backend_url;
         const apiUrl = `${backendUrl}/api/weather?city=${city}`;
         const response = await fetch(apiUrl);
         if (!response.ok) throw new Error('Could not get coordinates');
