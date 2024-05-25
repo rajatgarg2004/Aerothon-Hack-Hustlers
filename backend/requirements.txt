@@ -9,3 +9,4 @@ transformers==4.11.2
 matplotlib==3.4.3
 gensim==4.1.2
 gunicorn==22.0.0
+Werkzeug==3.0.2
