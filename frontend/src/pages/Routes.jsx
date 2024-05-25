@@ -108,6 +108,9 @@ const Routes = () => {
                     <div className='flex flex-row justify-between'>
                         {betweenData.map((condition, index) => (
                         <li key={index} className='list-none'>
+                            <h1 className='text-xl'>
+                                Route {index+1}
+                            </h1>
                             <ul className='text-xl'>
                                 <li><b>City</b>: <b>{condition.city}</b></li>
                                 <li><b>Cluster Label</b>: {condition.cluster_label}</li>
@@ -199,7 +202,7 @@ const Routes = () => {
                     <h2 className="text-2xl font-bold mb-2">Flight Risk Possibilities</h2>
                     <span className='text-xl'>Direct Path is the Optimal Path</span>
                     {
-                        
+
                     }
                 </div>
 
